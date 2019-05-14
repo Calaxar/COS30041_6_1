@@ -56,6 +56,13 @@ public class CartItem implements Serializable {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof CartItem) {
+			return itemId.equals(((CartItem) obj).itemId);
+		}
+		return false;
+	}
+
 }
